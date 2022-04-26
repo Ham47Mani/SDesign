@@ -1,2 +1,9 @@
-/*---------- Include Variables ----------*/
-// @import "sass/helpers/_helpers";
+// ====================================== Start Global Rules ======================================
+* { box-sizing: border-box }
+body { font-family: 'Lato', sans-serif }
+.list-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+// ====================================== End Global Rules ======================================

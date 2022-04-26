@@ -21,6 +21,10 @@ block stylesheet
   title #{Title}
   //- Add a logo icon for title bar
   link(rel="shortcut icon", href="imgs/logo.png", type="image/x-icon")
+  //- Normalize Library
+  link(rel="stylesheet", href="css/normalize.css")
+  //- Add Lato Font From Google Fonts
+  link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,700&display=swap")
   link(rel="stylesheet", href="css/main.css")
 
 
@@ -29,7 +33,21 @@ block stylesheet
                                               In this a block for page content
   ====================================================================================================================
 block content 
-  //- ***************************************** Start  *****************************************
+  //- ***************************************** Start Lading *****************************************
+  header
+    nav 
+      .logo 
+        //- img(src="imgs/logo.png", alt="Logo")
+        p SDesign
+      ul.list-unstyled
+        li: a(href="#") About
+        li: a(href="#") Services
+        li: a(href="#") Product
+        li: a(href="#") Contact
+    .intro-text 
+      h1 We Are Creative Agency 
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus fugiat molestiae ipsa, deleniti quidem quas!
+  //- ***************************************** End Lading *****************************************
 
 //-
   ====================================================================================================================
