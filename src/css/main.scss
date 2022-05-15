@@ -6,4 +6,82 @@ body { font-family: 'Lato', sans-serif }
   margin: 0;
   padding: 0
 }
+a { text-decoration: none }
+.container { width: 90%; margin-left: auto; margin-right: auto; }
 // ====================================== End Global Rules ======================================
+
+// ====================================== Start Variables ======================================
+$mainColor: #FF9800;
+// ====================================== End Variables ======================================
+
+
+// ====================================== Start Landing ======================================
+header {
+  min-height: 100vh;
+  background-image: url("../imgs/header/1.jpg");
+  background-size: cover;
+  position: relative;
+
+  //--- Overlay
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: transparentize(#000, 0.4);
+  }
+
+  //--- Nav
+  nav {
+    .container {
+      color: white;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    //-- Logo
+    .logo {
+      padding: 15px;
+      font-size: 20px;
+      span { color: $mainColor; font-weight: bold }
+    }
+    //-- Links
+    .links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      li { 
+        margin-right: 15px;
+        a { 
+          color: inherit;
+          transition: .3s;
+          &.active, &:hover { color: $mainColor }
+        }
+      }
+    }
+  }
+
+  //--- Introduction Text
+  .intro-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 80%;
+
+    h1 {
+      font-size: 35px;
+      margin: 0 0 12px;
+      span { color: $mainColor }
+    }
+    p {
+      line-height: 1.6;
+      font-size: 20px;
+    }
+  }
+}
+// ====================================== End Landing ======================================

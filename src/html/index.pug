@@ -36,16 +36,18 @@ block content
   //- ***************************************** Start Lading *****************************************
   header
     nav 
-      .logo 
-        //- img(src="imgs/logo.png", alt="Logo")
-        p SDesign
-      ul.list-unstyled
-        li: a(href="#") About
-        li: a(href="#") Services
-        li: a(href="#") Product
-        li: a(href="#") Contact
+      .container 
+        .logo 
+          //- img(src="imgs/logo.png", alt="Logo")
+          p #[span SD]esign
+        ul.links.list-unstyled
+          li: a.active(href="#") Home
+          li: a(href="#") About
+          li: a(href="#") Services
+          li: a(href="#") Product
+          li: a(href="#") Contact
     .intro-text 
-      h1 We Are Creative Agency 
+      h1 We Are #[span Creative] Agency 
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus fugiat molestiae ipsa, deleniti quidem quas!
   //- ***************************************** End Lading *****************************************
 
@@ -54,3 +56,4 @@ block content
   In this a block for add Js file for this page
   ====================================================================================================================
 block script
+  script(src="script/script-min.js") 
