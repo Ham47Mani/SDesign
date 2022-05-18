@@ -12,7 +12,7 @@ block includes
   In this a block we can create a variables for this page
   =======================================================
 block variables
-  - var Title = "Special Design";
+  - var Title = "SDesign";
 //-
   =======================================================
   In this a block for add CSS file for this page
@@ -23,6 +23,8 @@ block stylesheet
   link(rel="shortcut icon", href="imgs/logo.png", type="image/x-icon")
   //- Normalize Library
   link(rel="stylesheet", href="css/normalize.css")
+  //- Fontawesome Library
+  link(rel="stylesheet", href="css/fontawesome.min.css")
   //- Add Lato Font From Google Fonts
   link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,700&display=swap")
   link(rel="stylesheet", href="css/main.css")
@@ -33,6 +35,23 @@ block stylesheet
                                               In this a block for page content
   ====================================================================================================================
 block content 
+  //- ***************************************** Start Setting Box *****************************************
+  .setting-box
+    .toggele-setting
+      i.fa.fa-gear
+    .settings-container
+      .option-box 
+        h4 Colors 
+        ul.colors-lists
+          -var colors = ["#FF9800", "#E91E63", "#009688", "#03a9f4", "#4caf50"]
+          -for (var i = 0; i < 5; i = i + 1)
+            -if (i == 0)
+              li.active(data-color= colors[i])
+            -else
+              li(data-color= colors[i])
+
+  //- ***************************************** End Setting Box *****************************************
+
   //- ***************************************** Start Lading *****************************************
   header
     nav 
@@ -49,7 +68,7 @@ block content
     .intro-text 
       h1 We Are #[span Creative] Agency 
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus fugiat molestiae ipsa, deleniti quidem quas!
-  //- ***************************************** End Lading *****************************************
+  //- ***************************************** End Lading ******* **********************************
 
 //-
   ====================================================================================================================
