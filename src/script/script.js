@@ -109,3 +109,26 @@ if (mainColor != null) {
 }
 
 //============================= End Setting Box ===============================
+
+//============================= Start Our Skills ===============================
+let ourSkills =  document.querySelector(".our-skills"); 
+
+window.onscroll = function () {
+  //- Skills Offset Top
+  let skillsOffsetTop = ourSkills.offsetTop;
+  //- Window ScrollTop
+  let windowScrollTop = this.pageYOffset;
+
+  if (windowScrollTop > skillsOffsetTop - 100) {
+    let allSklills = document.querySelectorAll(".our-skills .skill-progress span");
+    allSklills.forEach(skill => {
+      skill.style.width = skill.dataset.progress;
+    });
+  } else {
+    let allSklills = document.querySelectorAll(".our-skills .skill-progress span");
+    allSklills.forEach(skill => {
+      skill.style.width = "0";
+    });
+  }
+};
+//============================= End Our Skills ===============================

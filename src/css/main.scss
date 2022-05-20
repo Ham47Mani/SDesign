@@ -209,3 +209,49 @@ header {
   }
 }
 // ====================================== End About Us ======================================
+
+// ====================================== Start Our Skills ======================================
+.our-skills {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: #EEE;
+  .container {
+    h2 {
+      font-weight: bold;
+      font-size: 30px;
+      color: var(--main-color);
+      margin: 0 0 50px;
+      text-align: center;
+    }
+    .skill-box {
+      background-color: white;
+      display: flex;
+      padding: 15px;
+      margin-bottom: 15px;
+      .skill-name {
+        font-weight: bold;
+        width: 140px;
+        text-align: center;
+        line-height: 30px;
+      }
+      .skill-progress {
+        height: 30px;
+        width: 100%;
+        background-color: #f6f6f6;
+        border-radius: 6px;
+        position: relative;
+        overflow: hidden;
+        span {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 0;
+          background-color: var(--main-color);
+          transition: 1s;
+        }
+      }
+    }
+  }
+}
+// ====================================== End Our Skills ======================================
