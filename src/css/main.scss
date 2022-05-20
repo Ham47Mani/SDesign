@@ -43,25 +43,31 @@ a { text-decoration: none }
   .settings-container {
     //-- Option Box
     .option-box {
-      padding: 20px;
+      padding: 10px;
+      text-align: center;
+      background-color: #EEE;
+      margin: 10px;
+
       h4 {
         margin: 0;
         color: #666;
+        font-size: 14px;
       }
       .colors-lists {
         list-style: none;
         text-align: center;
         padding: 0;
+        margin: 10px 0 0;
 
         li {
           display: inline-block;
-          width: 20px;
-          height: 20px;
+          width: 24px;
+          height: 24px;
           border-radius: 50%;
           cursor: pointer;
           opacity: 0.3;
-          margin-right: 5px;
-          &.active { opacity: 1 }
+          border: 3px solid #EEE;
+          &.active { opacity: 1; border-color: white }
 
           $colors: #FF9800, #E91E63, #009688, #03a9f4, #4caf50;
           @for $i from 1 through 5 {
@@ -69,6 +75,25 @@ a { text-decoration: none }
                 background-color: nth($colors, $i);
             }
           }
+        }
+      }
+
+      &.random-background {
+        //------ Background Box
+        .yes, .no {
+          width: 50px;
+          margin-top: 10px;
+          font-size: 14px;
+          padding: 4px 10px;
+          display: inline-block;
+          border-radius: 4px;
+          opacity: 0.5;
+          cursor: pointer;
+          transition: .4s;
+          background-color: var(--main-color);
+          margin-right: 10px;
+
+          &.active { opacity: 1; }
         }
       }
     }

@@ -40,6 +40,7 @@ block content
     .toggele-setting
       i.fa.fa-gear
     .settings-container
+      //-=== Colors Box
       .option-box 
         h4 Colors 
         ul.colors-lists
@@ -49,6 +50,11 @@ block content
               li.active(data-color= colors[i])
             -else
               li(data-color= colors[i])
+      //-=== Background Box
+      .option-box.random-background
+        h4 Random Backgrounds
+        span.yes.active(data-background = "yes") Yes
+        span.no(data-background = "no") No
 
   //- ***************************************** End Setting Box *****************************************
 
