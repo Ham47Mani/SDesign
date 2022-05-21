@@ -132,3 +132,49 @@ window.onscroll = function () {
   }
 };
 //============================= End Our Skills ===============================
+
+//============================= Start Our Gallery ===============================
+//-------------------------- Create Popup With The Image
+let imgGallery = document.querySelectorAll(".our-gallery img");
+imgGallery.forEach(img => {
+  img.addEventListener("click", (e) => {
+    //--- Create Overlay
+    let overlay = document.createElement("div");
+    overlay.className = "popup-overlay";
+    document.body.appendChild(overlay);
+
+    //--- Create Popup
+    let popupBox = document.createElement("div");
+    popupBox.className = "popup-Box";
+    let popupImg = document.createElement("img");
+
+    if (img.alt !== null) {
+      let imgHeading = document.createElement("h3");
+      let imgText = document.createTextNode(img.alt);
+      imgHeading.appendChild(imgText);
+      popupBox.appendChild(imgHeading)
+    }
+
+    //--- Create Image
+    popupImg.src = img.src;
+    popupBox.appendChild(popupImg);
+
+    document.body.appendChild(popupBox);
+
+    //--- Create The Close Span
+    let closePopup = document.createElement("span");
+    let closePopupText = document.createTextNode("X");
+    closePopup.appendChild(closePopupText);
+    closePopup.className ="popup-close";
+    popupBox.appendChild(closePopup);
+
+    //--- Close Popup
+    document.addEventListener("click", (e) => {
+      if (e.target.className == "popup-close") {
+        e.target.parentNode.remove();
+        document.querySelector(".popup-overlay").remove();
+      }
+    });
+  });
+});
+//============================= End Our Gallery ===============================

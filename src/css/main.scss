@@ -283,4 +283,46 @@ header {
     }
   }
 }
+//------- Popup Overlay
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparentize(#000, 0.3);
+  z-index: 100000;
+}
+//------- Popup Box
+.popup-Box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #CCC;
+  padding: 20px;
+  z-index: 100001;
+  h3 {
+    font-weight: bold;
+    text-align: center;
+    color: var(--main-color);
+    margin: 0 0 20px;
+  }
+  img {
+    max-width: 100%;
+  }
+  .popup-close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background-color: var(--main-color);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50%;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+}
 // ====================================== End Our Gallery ======================================
