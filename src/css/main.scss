@@ -255,3 +255,32 @@ header {
   }
 }
 // ====================================== End Our Skills ======================================
+
+// ====================================== Start Our Gallery ======================================
+.our-gallery {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .container {
+    h2 {
+      font-weight: bold;
+      font-size: 30px;
+      color: var(--main-color);
+      margin: 0 0 50px;
+      text-align: center;
+    }
+    .img-box {
+      text-align: center;
+      img {
+        width: 200px;
+        height: 200px;
+        padding: 3px;
+        background-color: #f6f6f6;
+        border: 1px solid #CCC;
+        margin: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+// ====================================== End Our Gallery ======================================
