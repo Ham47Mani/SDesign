@@ -16,6 +16,7 @@ a { text-decoration: none }
   padding-right: 15px;
   margin: auto 
 }
+.clearfix { clear: both }
 // ====================================== End Global Rules ======================================
 
 
@@ -326,3 +327,98 @@ header {
   }
 }
 // ====================================== End Our Gallery ======================================
+
+// ====================================== Start Timeline ======================================
+.timeline {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #EEE;
+  h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin: 0 0 50px;
+    text-align: center;
+  }
+  .timeline-content {
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: "";
+      width: 2px;
+      height: 100%;
+      background-color: var(--main-color);
+      position: absolute;
+      left: 50%;
+      top: 0;
+      margin-left: -1px;
+    }
+    .year {
+      margin: 20px auto;
+      width: 50px;
+      background-color: var(--main-color);
+      color: white;
+      position: relative;
+      font-weight: bold;
+      border-radius: 4px;
+      text-align: center;
+      padding: 2px 5px;
+    }
+    .left, .right {
+      width: calc(50% - 25px);
+      margin-bottom: 40px;
+      position: relative;
+      &::before {
+        content: "";
+        width: 14px;
+        height: 10px;
+        background-color: white;
+        border: 3px solid var(--main-color);
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+      }
+      .content {
+        padding: 20px;
+        background-color: white;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 20px;
+          height: 0;
+          width: 0;
+          border-style: solid;
+          border-width: 10px;
+        }
+
+        h3 {
+          font-weight: bold;
+          color: var(--main-color);
+          margin: 0 0 10px;
+        }
+        p {
+          color: #666;
+          margin: 0;
+          line-height: 1.6;
+        }
+      }
+    }
+    .left { 
+      float: left;
+      &::before { right: -35px }
+      .content::before {
+        right: -20px;
+        border-color: transparent transparent transparent white;
+      }
+    }
+    .right { 
+      float: right;
+      &::before { left: -35px }
+      .content::before {
+        left: -20px;
+        border-color: transparent white transparent transparent;
+      }
+    }
+  }
+}
+// ====================================== End Timeline ======================================
