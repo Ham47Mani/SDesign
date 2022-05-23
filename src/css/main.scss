@@ -84,25 +84,36 @@ a { text-decoration: none }
           }
         }
       }
+      //------ Background Box
+      span {
+        width: 50px;
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 4px 10px;
+        display: inline-block;
+        border-radius: 4px;
+        opacity: 0.5;
+        cursor: pointer;
+        transition: .4s;
+        background-color: var(--main-color);
+        margin-right: 10px;
 
-      &.random-background {
-        //------ Background Box
-        .yes, .no {
-          width: 50px;
-          margin-top: 10px;
-          font-size: 14px;
-          padding: 4px 10px;
-          display: inline-block;
-          border-radius: 4px;
-          opacity: 0.5;
-          cursor: pointer;
-          transition: .4s;
-          background-color: var(--main-color);
-          margin-right: 10px;
-
-          &.active { opacity: 1; }
-        }
+        &.active { opacity: 1; }
       }
+    }
+
+    //-- Reset Option
+    .reset-option {
+      background-color: #f44336;
+      border: none;
+      width: 178px;
+      margin: 10px auto;
+      display: block;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
     }
   }
 }

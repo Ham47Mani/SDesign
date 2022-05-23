@@ -75,9 +75,7 @@ randomBg.forEach(span => {
       backgrounOpt = true;
       randomizeImgs();
       localStorage.setItem("background_option", true);
-      console.log("yes");
     } else {
-      console.log("no");
       backgrounOpt = false;
       clearInterval(bgInterval);
       localStorage.setItem("background_option", false);
@@ -100,6 +98,12 @@ if (mainColor != null) {
   });
 }
 
+//----------------- Reset Option -----------------------
+document.querySelector(".reset-option").onclick = function () {
+  localStorage.clear();
+  window.location.reload();
+}
+
 //============================= End Setting Box ===============================
 
 //============================= Start Nav Bullets ===============================
@@ -120,6 +124,32 @@ function scrollToSection (elements) {
     });
   });
 }
+
+//--------- Bullets Box Option
+let bulletsSpan = document.querySelectorAll(".show-bullets span"),
+    bulletsContainer = document.querySelector(".nav-bullets"),
+    bulletLocalItem = localStorage.getItem("bullets-options");
+
+if (bulletLocalItem !== null) {
+  bulletsContainer.style.display = bulletLocalItem;
+  bulletsSpan.forEach(span => {
+    span.classList.remove("active");
+    (bulletLocalItem == "block")? document.querySelector(".show-bullets .yes").classList.add("active") : document.querySelector(".show-bullets .no").classList.add("active");
+  });
+}
+
+bulletsSpan.forEach(span => {
+  span.addEventListener("click", (event) => {
+    if (span.dataset.bullets == "show") {
+      bulletsContainer.style.display = "block";
+      localStorage.setItem("bullets-options", "block");
+    } else {
+      bulletsContainer.style.display = "none";
+      localStorage.setItem("bullets-options", "none");
+    }
+    hadleActive(event);
+  });
+});
 //============================= End Nav Bullets ===============================
 
 //============================= Start Our Skills ===============================
