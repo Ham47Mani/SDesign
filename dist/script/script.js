@@ -61,11 +61,7 @@ colorsLi.forEach(li => {
     document.documentElement.style.setProperty("--main-color", e.target.dataset.color);
     //- Set color on local storage
     localStorage.setItem("color_option", e.target.dataset.color);
-    //- Remove class active from all chrildrens
-    e.target.parentElement.querySelectorAll(".active").forEach(element => {
-      element.classList.remove("active");
-    });
-    e.target.classList.add("active");
+    hadleActive(e)
   });
 });
 
@@ -73,11 +69,7 @@ colorsLi.forEach(li => {
 const randomBg = document.querySelectorAll(".option-box.random-background span");
 randomBg.forEach(span => {
   span.addEventListener("click", (e) => {
-    //- Remove class active from all chrildrens
-    e.target.parentElement.querySelectorAll(".active").forEach(element => {
-      element.classList.remove("active");
-    });
-    e.target.classList.add("active");
+    hadleActive(e);
 
     if (e.target.dataset.background == "yes") {
       backgrounOpt = true;
@@ -109,6 +101,26 @@ if (mainColor != null) {
 }
 
 //============================= End Setting Box ===============================
+
+//============================= Start Nav Bullets ===============================
+let allBullets = document.querySelectorAll(".nav-bullets  .bullet");
+scrollToSection(allBullets);
+
+let allLinks = document.querySelectorAll("header .links a");
+scrollToSection(allLinks);
+
+//---- scrollToSection Function
+function scrollToSection (elements) {
+  elements.forEach(ele => {
+    ele.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(e.target.dataset.section).scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  });
+}
+//============================= End Nav Bullets ===============================
 
 //============================= Start Our Skills ===============================
 let ourSkills =  document.querySelector(".our-skills"); 
@@ -178,3 +190,13 @@ imgGallery.forEach(img => {
   });
 });
 //============================= End Our Gallery ===============================
+
+//============================= Start Functions ===============================
+function hadleActive (event) {
+  //- Remove class active from all chrildrens
+  event.target.parentElement.querySelectorAll(".active").forEach(element => {
+    element.classList.remove("active");
+  });
+  event.target.classList.add("active");
+}
+//============================= End Functions ===============================

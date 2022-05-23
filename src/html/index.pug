@@ -58,6 +58,22 @@ block content
 
   //- ***************************************** End Setting Box *****************************************
 
+  //- ***************************************** Start Nav Bullets *****************************************
+  .nav-bullets 
+    .bullet(data-section="#about")
+      .tooltip About Us
+    .bullet(data-section="#ourSkills")
+      .tooltip Skills
+    .bullet(data-section="#gallery")
+      .tooltip Gallery
+    .bullet(data-section="#timeline")
+      .tooltip Timeline
+    .bullet(data-section="#features")
+      .tooltip Features
+    .bullet(data-section="#testimonials")
+      .tooltip Testimonials
+  //- ***************************************** End Nav Bullets *****************************************
+
   //- ***************************************** Start Lading *****************************************
   header
     nav 
@@ -66,10 +82,13 @@ block content
           //- img(src="imgs/logo.png", alt="Logo")
           p #[span SD]esign
         ul.links.list-unstyled
-          li: a.active(href="#") Home
-          li: a(href="#") About
-          li: a(href="#") Services
-          li: a(href="#") Product
+          li: a.active(href="#", data-section="header") Home
+          li: a(href="#about", data-section="#about") About
+          li: a(href="#ourSkills", data-section="#ourSkills") Skills
+          li: a(href="#gallery", data-section="#gallery") Gallery
+          li: a(href="#timeline", data-section="#timeline") Timeline
+          li: a(href="#features", data-section="#features") Features
+          li: a(href="#testimonials", data-section="#testimonials") Testimonials
           li: a(href="#") Contact
     .intro-text 
       h1 We Are #[span Creative] Agency 

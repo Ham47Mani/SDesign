@@ -30,6 +30,7 @@ a { text-decoration: none }
   z-index: 9999;
   background-color: white;
   transition: .5s;
+  border: 1px solid #eee;
   &.open { left: 0 }
 
   //--- Fontawesone icon
@@ -106,6 +107,55 @@ a { text-decoration: none }
   }
 }
 // ====================================== End Setting Box ======================================
+
+// ====================================== Start Nav Bullets ======================================
+.nav-bullets {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  z-index: 10000;
+
+  .bullet {
+    width: 15px;
+    height: 15px;
+    border: 3px solid var(--main-color);
+    margin: 15px auto;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    &:hover .tooltip { display: block }
+
+    .tooltip {
+      background-color: var(--main-color);
+      color: white;
+      padding: 8px 10px;
+      width: 120px;
+      position: absolute;
+      top: -10px;
+      right: 32px;
+      text-align: center;
+      cursor: default;
+      pointer-events: none;
+      display: none;
+
+      &::before {
+        content: "";
+        border-style: solid;
+        border-width: 8px;
+        border-color: transparent transparent transparent var(--main-color);
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: -16px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+// ====================================== End Nav Bullets ======================================
 
 // ====================================== Start Landing ======================================
 header {
