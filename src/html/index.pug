@@ -78,6 +78,8 @@ block content
       .tooltip Features
     .bullet(data-section="#testimonials")
       .tooltip Testimonials
+    .bullet(data-section="#contact")
+      .tooltip Contact Us
   //- ***************************************** End Nav Bullets *****************************************
 
   //- ***************************************** Start Lading *****************************************
@@ -95,7 +97,7 @@ block content
           li: a(href="#timeline", data-section="#timeline") Timeline
           li: a(href="#features", data-section="#features") Features
           li: a(href="#testimonials", data-section="#testimonials") Testimonials
-          li: a(href="#") Contact
+          li: a(href="#contact", data-section="#contact") Contact
     .intro-text 
       h1 We Are #[span Creative] Agency 
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus fugiat molestiae ipsa, deleniti quidem quas!
@@ -235,6 +237,21 @@ block content
           p CEO At Company
     .clearfix
   //- ***************************************** End Testimonials ******************************************
+
+  //- ***************************************** Start Contact Us ******************************************
+  #contact.contact 
+    .container 
+      h2 Contact Us
+      form(action="") 
+        .left 
+          input(type="text", name="username", placeholder="Your Name")
+          input(type="text", name="phone", placeholder="Your Phone")
+          input(type="email", name="email", placeholder="Your Email")
+          input(type="text", name="subject", placeholder="Subject")
+        .right
+          textarea(name="message", placeholder="Your Message")
+          input(type="submit", value="Send")
+  //- ***************************************** End Contact Us ******************************************
 
 //-
   ====================================================================================================================

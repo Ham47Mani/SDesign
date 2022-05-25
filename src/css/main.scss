@@ -616,3 +616,71 @@ header {
   }
 }
 // ====================================== End Testimonials ======================================
+
+// ====================================== Start Contact Us ======================================
+.contact {
+  min-height: 600px;
+  background: url("../imgs/contact/contact-bg.jpg");
+  background-size: cover;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: transparentize(#000, 0.2);
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+    h2 {
+      font-weight: bold;
+      font-size: 30px;
+      color: white;
+      margin: 0 0 30px;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: auto;
+
+      > div {
+        width: 49%;
+        input:not([type="submit"]), textarea {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #555;
+          background-color: rgb(218 218 218 / 0.19);
+          height: 40px;
+          &:focus {
+            outline: 1px solid var(--main-color);
+          }
+          &:focus::-webkit-input-placeholder {
+            opacity: 0;
+            transition: .4s;
+          }
+        }
+        textarea {
+          resize: none;
+          height: 150px;
+        }
+        input[type="submit"] {
+          padding: 10px;
+          height: 40px;
+          width: 100%;
+          background-color: var(--main-color);
+          font-weight: bold;
+          border-color: transparent;
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+// ====================================== End Contact Us ======================================
