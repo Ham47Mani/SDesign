@@ -10,8 +10,7 @@ body { font-family: 'Lato', sans-serif }
   --main-color : #FF9800;
 }
 a { text-decoration: none }
-.container { 
-  width: 1170px;
+.container {
   padding-left: 15px;
   padding-right: 15px;
   margin: auto 
@@ -684,3 +683,35 @@ header {
   }
 }
 // ====================================== End Contact Us ======================================
+
+// ====================================== Start Grid System ======================================
+//-------------------- Small Devices --------------
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+//-------------------- Medium Devices --------------
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+//-------------------- Large Devices --------------
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+//-------------------- Extra Large Devices --------------
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+// ====================================== End Grid System ======================================
+
+
