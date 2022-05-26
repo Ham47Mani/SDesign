@@ -89,15 +89,19 @@ block content
         .logo 
           //- img(src="imgs/logo.png", alt="Logo")
           p #[span SD]esign
-        ul.links.list-unstyled
-          li: a.active(href="#", data-section="header") Home
-          li: a(href="#about", data-section="#about") About
-          li: a(href="#ourSkills", data-section="#ourSkills") Skills
-          li: a(href="#gallery", data-section="#gallery") Gallery
-          li: a(href="#timeline", data-section="#timeline") Timeline
-          li: a(href="#features", data-section="#features") Features
-          li: a(href="#testimonials", data-section="#testimonials") Testimonials
-          li: a(href="#contact", data-section="#contact") Contact
+        .toggle-menu
+          -for (var i = 0; i < 3; i = i + 1)
+            span
+        .links-container
+          ul.links.list-unstyled
+            li: a.active(href="#", data-section="header") Home
+            li: a(href="#about", data-section="#about") About
+            li: a(href="#ourSkills", data-section="#ourSkills") Skills
+            li: a(href="#gallery", data-section="#gallery") Gallery
+            li: a(href="#timeline", data-section="#timeline") Timeline
+            li: a(href="#features", data-section="#features") Features
+            li: a(href="#testimonials", data-section="#testimonials") Testimonials
+            li: a(href="#contact", data-section="#contact") Contact
     .intro-text 
       h1 We Are #[span Creative] Agency 
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus fugiat molestiae ipsa, deleniti quidem quas!

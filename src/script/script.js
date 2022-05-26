@@ -43,6 +43,22 @@ function randomizeImgs () {
 }
 
 //============================= End Header ===============================
+//============================= Start Toggle Menu ===============================
+let toggleMenu = document.querySelector("header .toggle-menu");
+let menuContainer = document.querySelector("header .links-container");
+toggleMenu.onclick = function (e) {
+  e.stopPropagation();
+  this.classList.toggle("clicked");
+  menuContainer.classList.toggle("open");
+}
+
+window.onclick = function (e) {
+  if (e.target !== toggleMenu) {
+    toggleMenu.classList.remove("clicked");
+    menuContainer.classList.remove("open");
+  }
+}
+//============================= End Toggle Menu ===============================
 
 //============================= Start Setting Box ===============================
 //----------------- Open Setting Box -----------------------
@@ -112,6 +128,7 @@ scrollToSection(allBullets);
 
 let allLinks = document.querySelectorAll("header .links a");
 scrollToSection(allLinks);
+
 
 //---- scrollToSection Function
 function scrollToSection (elements) {

@@ -190,26 +190,62 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-
-    //-- Logo
-    .logo {
-      padding: 15px;
-      font-size: 20px;
-      span { color: var(--main-color); font-weight: bold }
-    }
-    //-- Links
-    .links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      //-- Logo
+      .logo {
+        padding: 15px;
+        font-size: 20px;
+        span { color: var(--main-color); font-weight: bold }
+      }
+      //-- Links
+      .links-container {
+        display: none;
+        &.open {
+          background-color: white;
+          display: block;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          border-radius: 6px;
+          z-index: 999;
+          .links li {
+            a {
+              display: block;
+              padding: 10px 20px;
+              font-weight: bold;
+              color: black;
+              transition: .4s;
+              &.active, &:hover {
+                background-color: var(--main-color);
+                color: white;
+                padding-left: 35px;
+              }
+            }
+          }
+        }
+      }
       
-      li { 
-        margin-right: 15px;
-        a { 
-          color: inherit;
-          transition: .3s;
-          &.active, &:hover { color: var(--main-color) }
+      //-- Toggle-menu
+      .toggle-menu {
+        background: none;
+        border: none;
+        width: 40px;
+        cursor: pointer;
+        position: relative;
+        &.clicked::before {
+          content: "";
+          position: absolute;
+          bottom: -13px;
+          left: 10px;
+          border-color: transparent transparent white transparent;
+          border-style: solid;
+          border-width: 10px;
+        }
+        span {
+          display: block;
+          height: 4px;
+          background-color: white;
+          &:not(:last-child) { margin-bottom: 4px }
         }
       }
     }
@@ -703,6 +739,27 @@ header {
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
+  }
+  header nav {
+    .toggle-menu { display: none }
+    .container .links-container {
+      display: block;
+      width: 100%;
+      .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        li { 
+          margin-right: 15px;
+          a { 
+            color: inherit;
+            transition: .3s;
+            &.active, &:hover { color: var(--main-color) }
+          }
+        }
+      }
+    }
   }
 }
 
