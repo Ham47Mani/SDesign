@@ -720,18 +720,21 @@ header {
 }
 // ====================================== End Contact Us ======================================
 
-// ====================================== Start Grid System ======================================
-//-------------------- Small Devices --------------
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
+// ====================================== Start Footer ======================================
+footer {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  span { color: var(--main-color) }
 }
+// ====================================== End Footer ======================================
 
-//-------------------- Medium Devices --------------
-@media (min-width: 768px) {
+// ====================================== Start Grid System ======================================
+//-------------------- Extra Large Devices --------------
+@media (min-width: 1200px) {
   .container {
-    max-width: 720px;
+    max-width: 1140px;
   }
 }
 
@@ -743,7 +746,9 @@ header {
   header nav {
     .toggle-menu { display: none }
     .container .links-container {
-      display: block;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
       width: 100%;
       .links {
         display: flex;
@@ -763,10 +768,131 @@ header {
   }
 }
 
-//-------------------- Extra Large Devices --------------
-@media (min-width: 1200px) {
+@media (max-width: 991px) {
+  //---------- Features -------------
+  .features .container {
+    .feat-box { width: calc(100% / 2) }
+  }
+}
+
+//-------------------- Medium Devices --------------
+@media (min-width: 768px) {
   .container {
-    max-width: 1140px;
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 767px) {
+  //---------- Header -------------
+  .about-us .container {
+    flex-direction: column;
+    text-align: center;
+    .info-box { padding: 0 0 30px}
+  }
+
+  //---------- Skills -------------
+  .our-skills .container {
+    .skill-box {
+      flex-direction: column;
+      .skill-name {
+        width: 100%;
+      }
+    }
+  }
+
+  //---------- Gallery -------------
+  .our-gallery { text-align: center }
+
+  //---------- Features -------------
+  .features .container {
+    .feat-box { width: calc(100% / 2) }
+  }
+
+  //---------- Testimonials -------------
+  .testimonials .container {
+    .testim-box {
+      float: none;
+      width: 100%;
+      margin-bottom: 20px;
+      &:not(:last-of-type) { margin-right: 0 }
+      .person-info {
+        overflow: visible;
+        text-align: center;
+        img { float: none }
+      }
+    }
+  }
+
+  //---------- Contact -------------
+  .contact .container {
+    form {
+      flex-direction: column;
+      div { width: 100% }
+    }
+  }
+
+  //---------- footer -------------
+  footer { font-size: 14px }
+}
+
+//-------------------- Small Devices --------------
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (max-width: 575px) {
+  //---------- Header -------------
+  header .intro-text {
+    h1 { font-size: 22px }
+    p { font-size: 16px }
+  }
+
+  //---------- Header -------------
+  .about-us .container {
+    flex-direction: column;
+    text-align: center;
+    .info-box { padding: 0 0 30px}
+  }
+
+  //---------- Skills -------------
+  .our-skills .container {
+    .skill-box {
+      flex-direction: column;
+      .skill-name {
+        width: 100%;
+      }
+    }
+  }
+
+  //---------- Gallery -------------
+  .our-gallery { text-align: center }
+
+  //---------- Timeline -------------
+  .timeline .container { 
+    .timeline-content .year { margin-bottom: 40px }
+    .timeline-content .left,
+    .timeline-content .right {
+      float: none ;
+      width: 100%;
+      text-align: center;
+      &::before {
+        top: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .content::before {
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-color: transparent transparent white transparent;
+      }
+    }
+  }
+
+  //---------- Features -------------
+  .features .container {
+    .feat-box { width: 100%; }
   }
 }
 // ====================================== End Grid System ======================================
